@@ -1,6 +1,6 @@
 # klondike
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure implementation of [klondike](https://en.wikipedia.org/wiki/Klondike_(solitaire))
 
 ## Usage
 
