@@ -7,7 +7,9 @@
     (is (= (new-board)
            {:piles []
             :foundations {:clubs [] :diamonds [] :hearts [] :spades []}
-            :deck []}))))
+            :deck []}))
+    (is (= true
+           (every? empty? (vals (:foundations (new-board))))))))
 
 (deftest test-new-deck
   (testing "a new deck of 52 cards"
