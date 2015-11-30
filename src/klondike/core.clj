@@ -3,9 +3,10 @@
 (defn new-board
   ""
   []
-  {:piles []
-   :foundations {:clubs [] :diamonds [] :hearts [] :spades []}
-   :deck []})
+  (let [deck (new-deck)]
+    {:piles (for [n (range 1 8)] (take n (take 28 deck)))
+     :foundations {:clubs [] :diamonds [] :hearts [] :spades []}
+     :deck (drop 28 deck)}))
 
 (defn new-deck
   ""

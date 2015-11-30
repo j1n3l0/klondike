@@ -4,12 +4,16 @@
 
 (deftest a-new-board
   (testing "the structure of a blank board"
-    (is (= (new-board)
-           {:piles []
+    #_(is (= (new-board)
+           {:piles [[] [] [] [] [] [] []]
             :foundations {:clubs [] :diamonds [] :hearts [] :spades []}
             :deck []}))
+    (is (= (keys (new-board)) [:piles :foundations :deck]))
     (is (= true
-           (every? empty? (vals (:foundations (new-board))))))))
+           (every? empty? (vals (:foundations (new-board))))))
+    (is (= (count (:piles (new-board))) 7))
+    (is (= (range 1 8)
+           (map count (:piles (new-board)))))))
 
 (deftest test-new-deck
   (testing "a new deck of 52 cards"
